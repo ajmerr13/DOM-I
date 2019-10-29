@@ -28,7 +28,7 @@ const siteContent = {
   },
   "contact": {
     "contact-h4" : "Contact",
-    "address" : "123 Way 456 Street Somewhere, USA",
+    "address" : "123 Way 456 Street <br> Somewhere, USA",
     "phone" : "1 (888) 888-8888",
     "email" : "sales@greatidea.io",
   },
@@ -76,7 +76,8 @@ const ctaHeader = document.querySelector('.cta-text h1');
 const ctaButton = document.querySelector('.cta-text button');
 const ctaImg = document.querySelector('#cta-img');
 
-ctaHeader.innerHTML = siteContent['cta']['h1'].replace(/\s/g, '<br>');
+let ctaH1 = document.querySelector(".cta h1");
+ctaH1.innerHTML = "DOM<br> IS<br> AWESOME";
 ctaButton.textContent = siteContent['cta']['button'];
 ctaImg.src = siteContent['cta']['img-src'];
 
@@ -115,9 +116,10 @@ contactHeader.textContent = siteContent['contact']['contact-h4'];
 
 const contactContent = document.querySelectorAll('.contact p');
 
-contactContent[0].textContent = siteContent['contact']['address'];
+contactContent[0].innerHTML = siteContent['contact']['address'];
 contactContent[1].textContent = siteContent['contact']['phone'];
 contactContent[2].textContent = siteContent['contact']['email'];
+
 
 
 
